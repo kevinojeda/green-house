@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class DropDownMenu extends Component{
+class Fixedplugin extends Component{
   render(){
     return (
       <div className="dropdown show-dropdown">
@@ -136,4 +136,4 @@ class DropDownMenu extends Component{
     }
   }
   
-  export default DropDownMenu ;
+  export default Fixedplugin ;
