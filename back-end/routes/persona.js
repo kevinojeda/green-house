@@ -6,13 +6,13 @@ const Persona = require('../models/persona.models');
 
 // GET all Personas
 router.get('/', async (req, res) => {
-  const personas = await Persona.find();
+  const personas = await Persona.find().catch(err => res.status(400).json('Error: ' + err));
   res.json(personas);
 });
 
 // GET all Personas
 router.get('/:id', async (req, res) => {
-  const persona = await Persona.findById(req.params.id);
+  const persona = await Persona.findById(req.params.id).catch(err => res.status(400).json('Error: ' + err));
   res.json(persona);
 });
 
@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   const { nombre, telefono, cedula, direccion, user, password, administrador, analista, operario } = req.body;
   const persona = new Persona({nombre, telefono, cedula, direccion, user, password, administrador, analista, operario});
-  await persona.save();
+  await persona.save().catch(err => res.status(400).json('Error: ' + err));
   res.json({status: 'Persona Saved'});
 });
 
@@ -28,12 +28,12 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   const { nombre, telefono, cedula, direccion, user, password, administrador, analista, operario } = req.body;
   const newPersona = {nombre, telefono, cedula, direccion, user, password, administrador, analista, operario};
-  await Persona.findByIdAndUpdate(req.params.id, newPersona);
+  await Persona.findByIdAndUpdate(req.params.id, newPersona).catch(err => res.status(400).json('Error: ' + err));
   res.json({status: 'Persona Updated'});
 });
 
 router.delete('/:id', async (req, res) => {
-  await Persona.findByIdAndRemove(req.params.id);
+  await Persona.findByIdAndRemove(req.params.id).catch(err => res.status(400).json('Error: ' + err));
   res.json({status: 'Persona Deleted'});
 });
 

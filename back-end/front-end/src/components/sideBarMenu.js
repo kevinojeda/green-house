@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DropDownMenu from './dropDownMenu';
 
 class SideBarMenu extends Component{
   render(){

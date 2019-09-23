@@ -9,6 +9,9 @@ import Graphs from './components/graphs';
 import Tables from './components/tables';
 import Footer from './components/footer';
 
+import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt} from 'react-router-dom';
+import Route from 'react-router-dom/Route';
+
 function App() {
   return (
     <div className="App">
