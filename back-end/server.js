@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const path = require('path');
 
 require('dotenv').config();
 
@@ -32,6 +33,10 @@ const personaRouter = require('./routes/persona');
 //app.use('/especificaciones', especificacionesRouter);
 //app.use('/medicion', medicionRouter );
 app.use('/persona', personaRouter);
+
+app.get('*', (req,res) =>{
+	res.sendFile(path.join(__dirname+'/front-end/public/index.html'));
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

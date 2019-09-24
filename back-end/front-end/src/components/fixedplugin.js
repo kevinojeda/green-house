@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class Fixedplugin extends Component{
   render(){
     return (
-      <div className="dropdown show-dropdown">
+      <div className="fixed-plugin">
+        <div className="dropdown show-dropdown">
         <a href="#" data-toggle="dropdown">
           <i className="fa fa-cog fa-2x"> </i>
         </a>
@@ -131,6 +132,7 @@ class Fixedplugin extends Component{
             </li>
           </ul>
         </div>
+      </div>
       </div>
       );
     }
