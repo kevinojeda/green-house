@@ -1,14 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-function NavItem(props){
-    return(
-        <li className={props.active}>
-            <a className="nav-link" href={props.href}>
-                <i className="material-icons">{props.icon}</i>
-                <p>{props.name}</p>
-            </a>
+class NavItem extends Component{
+    render(){
+        return (
+        <li className={this.props.active}>
+            <Link to={this.props.href} className="nav-link">
+                <i className="material-icons">{this.props.icon}</i>
+                <p>{this.props.name}</p>
+            </Link>
         </li>
-    )
+        );
+    }
 }
-
-  export default NavItem;
+export default NavItem;

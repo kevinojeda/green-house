@@ -10,10 +10,10 @@ class Indicators extends Component {
               <div className="card-icon">
                 <i className="material-icons">content_copy</i>
               </div>
-              <p className="card-category">Used Space</p>
+              <p className="card-category">Temperatura</p>
               <h3 className="card-title">
-                49/50
-                <small>GB</small>
+                26
+                <small>°C</small>
               </h3>
             </div>
             <div className="card-footer">
@@ -30,8 +30,8 @@ class Indicators extends Component {
               <div className="card-icon">
                 <i className="material-icons">store</i>
               </div>
-              <p className="card-category">Revenue</p>
-              <h3 className="card-title">$34,245</h3>
+              <p className="card-category">Humedad</p>
+              <h3 className="card-title">40%</h3>
             </div>
             <div className="card-footer">
               <div className="stats">
@@ -46,8 +46,8 @@ class Indicators extends Component {
               <div className="card-icon">
                 <i className="material-icons">info_outline</i>
               </div>
-              <p className="card-category">Fixed Issues</p>
-              <h3 className="card-title">75</h3>
+              <p className="card-category">CO2</p>
+              <h3 className="card-title">300 ppm</h3>
             </div>
             <div className="card-footer">
               <div className="stats">
@@ -63,8 +63,8 @@ class Indicators extends Component {
               <div className="card-icon">
                 <i className="fa fa-twitter"></i>
               </div>
-              <p className="card-category">Followers</p>
-              <h3 className="card-title">+245</h3>
+              <p className="card-category">Luz</p>
+              <h3 className="card-title">YES</h3>
             </div>
             <div className="card-footer">
               <div className="stats">

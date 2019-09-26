@@ -1,11 +1,21 @@
 import React, { Component } from "react";
 import NavItem from "./sidebarmenu/navItem";
+import { set } from "mongoose";
 
 class SideBarMenu extends Component {
-  state = {
-    active: ["","","","","",""]
 
+  constructor(props) {
+    super(props);
+    this.state = { active: ["","","","","",""]};
+    
   }
+
+  changeActive(num){
+    let ac = ["","","","","",""];
+    ac[num] = "active";
+    this.setState({active:ac});
+  }
+
   render() {
     return (
       <div
@@ -19,12 +29,12 @@ class SideBarMenu extends Component {
         </div>
         <div className="sidebar-wrapper">
           <ul className="nav">
-            <NavItem active={"nav-item "+this.state.active[0]} href="/mediciones" icon="eco" name="Mediciones"/>
-            <NavItem active={"nav-item "+this.state.active[1]} href="/alarmas" icon="alarmas" name="Alarmas"/>
-            <NavItem active={"nav-item "+this.state.active[2]} href="/especificaciones" icon="build" name="Especificaciones"/>
-            <NavItem active={"nav-item "+this.state.active[3]} href="/cosechas" icon="local_florist" name="Cosechas"/>
-            <NavItem active={"nav-item "+this.state.active[4]} href="/usuarios" icon="person" name="Usuarios"/>
-            <NavItem active={"nav-item "+this.state.active[5]} href="/about_us" icon="language" name="About Us"/>
+            <NavItem  active={"nav-item "+this.state.active[0]} href="/mediciones" icon="eco" name="Mediciones"/>
+            <NavItem  active={"nav-item "+this.state.active[1]} href="/alarmas" icon="alarmas" name="Alarmas"/>
+            <NavItem  active={"nav-item "+this.state.active[2]} href="/especificaciones" icon="build" name="Especificaciones"/>
+            <NavItem  active={"nav-item "+this.state.active[3]} href="/cosechas" icon="local_florist" name="Cosechas"/>
+            <NavItem  active={"nav-item "+this.state.active[4]} href="/usuarios" icon="person" name="Usuarios"/>
+            <NavItem  active={"nav-item "+this.state.active[5]} href="/about_us" icon="language" name="About Us"/>
           </ul>
         </div>
       </div>

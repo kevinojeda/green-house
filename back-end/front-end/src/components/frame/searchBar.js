@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component{
+  state = {
+    titulo: ""
+  }
     render(){
         return (
           <nav className="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div className="container-fluid">
               <div className="navbar-wrapper">
                 <a className="navbar-brand" href="#pablo">
-                  GREEN+
+                  {this.state.titulo}
                 </a>
               </div>
               <button
