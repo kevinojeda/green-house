@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import SideBarMenu from './sideBarMenu';
+import NavItem from './sidebarmenu/navItem';
 
 class SearchBar extends Component{
-  state = {
-    titulo: ""
+  constructor(props) {
+    super(props);
+    this.state = { title : "G"};
   }
+
+  
     render(){
         return (
           <nav className="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div className="container-fluid">
               <div className="navbar-wrapper">
                 <a className="navbar-brand" href="#pablo">
-                  {this.state.titulo}
+                  {this.state.title}
                 </a>
               </div>
               <button
@@ -101,16 +107,11 @@ class SearchBar extends Component{
                       className="dropdown-menu dropdown-menu-right"
                       aria-labelledby="navbarDropdownProfile"
                     >
-                      <a className="dropdown-item" href="#">
-                        Profile
-                      </a>
-                      <a className="dropdown-item" href="#">
-                        Settings
-                      </a>
+                      <Link to="/perfil" className="dropdown-item">Perfil</Link>
+                      <Link to="/ajustes" className="dropdown-item">Ajustes</Link>
+                      
                       <div className="dropdown-divider"></div>
-                      <a className="dropdown-item" href="#">
-                        Log out
-                      </a>
+                      <Link to="/out" className="dropdown-item">Salir</Link>
                     </div>
                   </li>
                 </ul>

@@ -2,16 +2,16 @@ import React, { Component } from "react";
 class TablaCosecha extends Component {
   render() {
     return (
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title ">Cosecha</h4>
-            <p class="card-category"> Datos de la cosecha</p>
+      <div className="col-md-12">
+        <div className="card">
+          <div className="card-header card-header-primary">
+            <h4 className="card-title ">Cosecha</h4>
+            <p className="card-category"> Datos de la cosecha</p>
           </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table">
-                <thead class=" text-primary">
+          <div className="card-body">
+            <div className="table-responsive">
+              <table className="table">
+                <thead className=" text-primary">
                   <th>Id</th>
                   <th>Fecha inicio</th>
                   <th>Nombre de la planta</th>
@@ -24,9 +24,9 @@ class TablaCosecha extends Component {
                   <tr>
                     <td>1</td>
                     <td>23/09/19</td>
-                    <td>CRIPY :)</td>
+                    <td>CRIPY :</td>
                     <td>20</td>
-                    <td class="text-primary">5KG</td>
+                    <td className="text-primary">5KG</td>
                     <td>60%</td>
                     <td>45%</td>
                   </tr>

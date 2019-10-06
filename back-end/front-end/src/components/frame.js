@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt} from 'react-r
 import Route from 'react-router-dom/Route';
 import TablaUsuarios from './frame/content/TablaUsuarios';
 import TablaCosecha from './frame/content/TablaCosecha';
+import TablaEspecificaciones from './frame/content/TablaEspecificaciones';
+import TablaAlarma from './frame/content/TablaAlarma';
 
 class Frame extends Component {
   render() {
@@ -25,8 +27,8 @@ class Frame extends Component {
             <div className="App">
             <Route exact path="/"  render={()=>{return(<div><Indicators/><Graphs/><Tables/></div>)}}/>
             <Route path="/mediciones"  render={()=>{return(<div><Indicators/><Graphs/><Tables/></div>)}}/>
-            <Route path="/alarmas"  render={()=>{return(<div></div>)}}/>
-            <Route path="/especificaciones"  render={()=>{return(<div></div>)}}/>
+            <Route path="/alarmas"  render={()=>{return(<div><TablaAlarma/></div>)}}/>
+            <Route path="/especificaciones"  render={()=>{return(<div><TablaEspecificaciones/></div>)}}/>
             <Route path="/cosechas"  render={()=>{return(<div><TablaCosecha/></div>)}}/>
             <Route path="/usuarios"  render={()=>{return(<div><TablaUsuarios/></div>)}}/>
             <Route path="/about_us"  render={()=>{return(<div></div>)}}/>
