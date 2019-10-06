@@ -31,9 +31,9 @@ class Frame extends Component {
             <div className="container-fluid">
             
             <div className="App">
-            <Route exact path="/"  render={()=>{return(<div><Indicators/><Graphs/><Tables/></div>)}}/>
+            <Route exact path="/"  render={()=>{return(<div><Indicators/><Graphs/></div>)}}/>
 
-            <Route exact path="/mediciones"  render={()=>{return(<div><Indicators/><Graphs/><Tables/></div>)}}/>
+            <Route exact path="/mediciones"  render={()=>{return(<div><Indicators/><Graphs/></div>)}}/>
 
             <Route exact path="/alarmas"  render={()=>{return(<div><TablaAlarma/></div>)}}/>
 

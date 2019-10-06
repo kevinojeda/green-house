@@ -14680,7 +14680,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   content: "";
   display: block;
   background: #FFFFFF;
-  opacity: .93;
+  opacity: .75;
 }
 
 .sidebar .logo {
