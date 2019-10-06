@@ -12,7 +12,7 @@ class TablaEspecificaciones extends Component {
           <div className="card-body">
             <div className="table-responsive">
               <table className="table">
-                <thead className=" text-primary">
+                <thead className=" text-warning">
                   <th>Semana</th>
                   <th>Temperatura dia</th>
                   <th>Temperatura Noche</th>
@@ -27,7 +27,7 @@ class TablaEspecificaciones extends Component {
                     <td>1</td>
                     <td>33G</td>
                     <td>24G</td>
-                    <td className="text-primary">34</td>
+                    <td className="text-warning">34</td>
                     <td>53</td>
                     <td>12H</td>
                     <td>56</td>

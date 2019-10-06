@@ -12,7 +12,7 @@ class TablaCosecha extends Component {
           <div className="card-body">
             <div className="table-responsive">
               <table className="table">
-                <thead className=" text-primary">
+                <thead className=" text-success">
                   <th>Id</th>
                   <th>Fecha inicio</th>
                   <th>Nombre de la planta</th>
@@ -27,7 +27,7 @@ class TablaCosecha extends Component {
                     <td>23/09/19</td>
                     <td>CRIPY :</td>
                     <td>20</td>
-                    <td className="text-primary">5KG</td>
+                    <td className="text-success">5KG</td>
                     <td>60%</td>
                     <td>45%</td>
                   </tr>

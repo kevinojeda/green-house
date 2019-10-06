@@ -10,7 +10,7 @@ class TablaAlarma extends Component {
           <div className="card-body">
             <div className="table-responsive">
               <table className="table">
-                <thead className=" text-primary">
+                <thead className=" text-danger">
                   <th>Medicion</th>
                 </thead>
                 <tbody>

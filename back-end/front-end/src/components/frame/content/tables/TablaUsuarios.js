@@ -12,7 +12,7 @@ class TablaUsuarios extends Component {
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
-                <thead class=" text-primary">
+                <thead class=" text-info">
                   <th>Nombre</th>
                   <th>Telefono</th>
                   <th>Cedula</th>
@@ -27,7 +27,7 @@ class TablaUsuarios extends Component {
                     <td>Camilo Sierra</td>
                     <td>31213456865</td>
                     <td>1802388743</td>
-                    <td class="text-primary">Bucaramanga</td>
+                    <td class="text-info">Bucaramanga</td>
                     <td>si</td>
                     <td>no</td>
                     <td>no</td>
