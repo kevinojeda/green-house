@@ -1,17 +1,18 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class TablaEspecificaciones extends Component {
   render() {
     return (
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title ">ESPECIFICACIONES</h4>
-            <p class="card-category"> Datos de especificaciones</p>
+      <div className="col-md-12">
+        <div className="card">
+          <div className="card-header card-header-warning">
+            <h4 className="card-title ">ESPECIFICACIONES</h4>
+            <Link class="btn btn-sm btn-warning" to="/especificaciones/form"> + Especificacion</Link>
           </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table">
-                <thead class=" text-primary">
+          <div className="card-body">
+            <div className="table-responsive">
+              <table className="table">
+                <thead className=" text-primary">
                   <th>Semana</th>
                   <th>Temperatura dia</th>
                   <th>Temperatura Noche</th>
@@ -26,7 +27,7 @@ class TablaEspecificaciones extends Component {
                     <td>1</td>
                     <td>33G</td>
                     <td>24G</td>
-                    <td class="text-primary">34</td>
+                    <td className="text-primary">34</td>
                     <td>53</td>
                     <td>12H</td>
                     <td>56</td>

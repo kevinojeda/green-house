@@ -4,9 +4,8 @@ class TablaAlarma extends Component {
     return (
       <div className="col-md-12">
         <div className="card">
-          <div className="card-header card-header-primary">
-            <h4 className="card-title ">ALARMA</h4>
-            <p className="card-category"> Datos de la alarma</p>
+          <div className="card-header card-header-danger">
+            <h4 className="card-title ">ALARMA</h4>  
           </div>
           <div className="card-body">
             <div className="table-responsive">

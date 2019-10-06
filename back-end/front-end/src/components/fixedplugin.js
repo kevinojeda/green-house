@@ -78,47 +78,6 @@ class Fixedplugin extends Component{
                 <img src="../assets/img/sidebar-4.jpg" alt="" />
               </a>
             </li>
-            <li className="button-container">
-              <a
-                href="https://www.creative-tim.com/product/material-dashboard"
-                target="_blank"
-                className="btn btn-primary btn-block"
-              >
-                Free Download
-              </a>
-            </li>
-            <li className="header-title">Want more components?</li>
-            <li className="button-container">
-              <a
-                href="https://www.creative-tim.com/product/material-dashboard-pro"
-                target="_blank"
-                className="btn btn-warning btn-block"
-              >
-                Get the pro version
-              </a>
-            </li>{" "}
-            -->
-            <li className="button-container">
-              <a
-                href="https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html"
-                target="_blank"
-                className="btn btn-default btn-block"
-              >
-                View Documentation
-              </a>
-            </li>
-            <li className="button-container github-star">
-              <a
-                className="github-button"
-                href="https://github.com/creativetimofficial/material-dashboard"
-                data-icon="octicon-star"
-                data-size="large"
-                data-show-count="true"
-                aria-label="Star ntkme/github-buttons on GitHub"
-              >
-                Star
-              </a>
-            </li>
             <li className="header-title">Thank you for 95 shares!</li>
             <li className="button-container text-center">
               <button id="twitter" className="btn btn-round btn-twitter">

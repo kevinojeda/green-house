@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class TablaUsuarios extends Component {
   render() {
     return (
       <div class="col-md-12">
         <div class="card">
-          <div class="card-header card-header-primary">
+          <div class="card-header card-header-info">
             <h4 class="card-title ">Usuarios</h4>
-            <p class="card-category"> Datos de usuarios</p>
+            <Link class="btn btn-sm btn-info" to="/usuarios/form"> + Usuarios</Link>
           </div>
           <div class="card-body">
             <div class="table-responsive">

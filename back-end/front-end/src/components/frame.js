@@ -9,10 +9,15 @@ import Footer from './frame/footer';
 
 import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
-import TablaUsuarios from './frame/content/TablaUsuarios';
-import TablaCosecha from './frame/content/TablaCosecha';
-import TablaEspecificaciones from './frame/content/TablaEspecificaciones';
-import TablaAlarma from './frame/content/TablaAlarma';
+import TablaAlarma from './frame/content/tables/TablaAlarma';
+import TablaEspecificaciones from './frame/content/tables/TablaEspecificaciones';
+import TablaUsuarios from './frame/content/tables/TablaUsuarios';
+import TablaCosecha from './frame/content/tables/TablaCosecha';
+
+import FormCosecha from './frame/content/forms/FromCosecha';
+import FormEspecificaciones from './frame/content/forms/FormEspecificaciones';
+import FormUsuario from './frame/content/forms/FormUsuario';
+
  
 
 class Frame extends Component {
@@ -27,12 +32,21 @@ class Frame extends Component {
             
             <div className="App">
             <Route exact path="/"  render={()=>{return(<div><Indicators/><Graphs/><Tables/></div>)}}/>
-            <Route path="/mediciones"  render={()=>{return(<div><Indicators/><Graphs/><Tables/></div>)}}/>
-            <Route path="/alarmas"  render={()=>{return(<div><TablaAlarma/></div>)}}/>
-            <Route path="/especificaciones"  render={()=>{return(<div><TablaEspecificaciones/></div>)}}/>
-            <Route path="/cosechas"  render={()=>{return(<div><TablaCosecha/></div>)}}/>
-            <Route path="/usuarios"  render={()=>{return(<div><TablaUsuarios/></div>)}}/>
-            <Route path="/about_us"  render={()=>{return(<div></div>)}}/>
+
+            <Route exact path="/mediciones"  render={()=>{return(<div><Indicators/><Graphs/><Tables/></div>)}}/>
+
+            <Route exact path="/alarmas"  render={()=>{return(<div><TablaAlarma/></div>)}}/>
+
+            <Route exact path="/especificaciones"  render={()=>{return(<div><TablaEspecificaciones/></div>)}}/>
+            <Route exact path="/especificaciones/form"  render={()=>{return(<div><FormEspecificaciones/></div>)}}/>
+
+            <Route exact path="/cosechas"  render={()=>{return(<div><TablaCosecha/></div>)}}/>
+            <Route exact path="/cosechas/form"  render={()=>{return(<div><FormCosecha/></div>)}}/>
+
+            <Route exact path="/usuarios"  render={()=>{return(<div><TablaUsuarios/></div>)}}/>
+            <Route exact path="/usuarios/form"  render={()=>{return(<div><FormUsuario/></div>)}}/>
+
+            <Route exact path="/about_us"  render={()=>{return(<div></div>)}}/>
             </div>
               
             </div>
