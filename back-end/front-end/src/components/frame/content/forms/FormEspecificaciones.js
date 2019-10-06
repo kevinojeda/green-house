@@ -67,9 +67,7 @@ class FormEspecificaciones extends Component {
                     </div>
                   </div>
                 </div>
-                <button type="submit" className="btn btn-warning pull-right">
-                  GUARDAR
-                </button>
+                <input type="submit" value="Guardar" className="btn btn-warning pull-right"/>
                 <div className="clearfix"></div>
               </form>
             </div>

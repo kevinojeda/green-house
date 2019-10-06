@@ -6,7 +6,7 @@ import NavItem from './sidebarmenu/navItem';
 class SearchBar extends Component{
   constructor(props) {
     super(props);
-    this.state = { title : "G"};
+    this.state = { title : ""};
   }
 
   

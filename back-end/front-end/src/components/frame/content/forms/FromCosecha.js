@@ -63,9 +63,7 @@ class FormCosecha extends Component {
                     </div>
                   </div>
                 </div>
-                <button type="submit" className="btn btn-success pull-right">
-                  GUARDAR
-                </button>
+                <input type="submit" value="Guardar" className="btn btn-success pull-right"/>
                 <div className="clearfix"></div>
               </form>
             </div>
