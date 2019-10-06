@@ -2,20 +2,28 @@ import React, { Component } from "react";
 class TablaAlarma extends Component {
   render() {
     return (
-      <div className="col-md-12">
-        <div className="card">
-          <div className="card-header card-header-danger">
-            <h4 className="card-title ">ALARMA</h4>  
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Alarma</h4>
           </div>
-          <div className="card-body">
-            <div className="table-responsive">
-              <table className="table">
-                <thead className=" text-danger">
-                  <th>Medicion</th>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-danger">
+                  <th>Fecha/Hora</th>
+                  <th>Temperatura</th>
+                  <th>Humedad</th>
+                  <th>CO2</th>
+                  <th>Luz</th>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1111111</td>
+                    <td>3:30 </td>
+                    <td>25 °C</td>
+                    <td>30 %</td>
+                    <td>234 ppm</td>
+                    <td class="text-danger">No</td>
                   </tr>
                 </tbody>
               </table>
