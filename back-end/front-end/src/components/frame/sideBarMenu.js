@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import NavItem from "./sidebarmenu/navItem";
-import { set } from "mongoose";
-import SearchBar from "./searchBar";
 
 class SideBarMenu extends Component {
 

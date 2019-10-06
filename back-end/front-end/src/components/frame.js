@@ -13,6 +13,7 @@ import TablaUsuarios from './frame/content/TablaUsuarios';
 import TablaCosecha from './frame/content/TablaCosecha';
 import TablaEspecificaciones from './frame/content/TablaEspecificaciones';
 import TablaAlarma from './frame/content/TablaAlarma';
+ 
 
 class Frame extends Component {
   render() {
