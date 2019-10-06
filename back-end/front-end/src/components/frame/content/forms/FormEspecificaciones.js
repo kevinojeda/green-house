@@ -3,7 +3,7 @@ class FormEspecificaciones extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-md-12">
           <div className="card">
             <div className="card-header card-header-warning">
               <h4 className="card-title">Formulario Especificaciones</h4>

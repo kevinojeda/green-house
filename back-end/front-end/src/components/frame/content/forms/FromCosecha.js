@@ -7,7 +7,7 @@ class FormCosecha extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-md-12">
           <div className="card">
             <div className="card-header card-header-success">
               <h4 className="card-title">Formulario Cosecha</h4>
