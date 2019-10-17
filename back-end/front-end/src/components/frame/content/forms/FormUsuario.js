@@ -17,14 +17,26 @@ class FormUsuarios extends Component {
     this.addUsuario = this.addUsuario.bind(this);
   }
   addUsuario(e){
+    e.preventDefault();
+    console.log(this.state);
+    this.state.operario === 'on' ? this.setState({operario:true}) : this.setState({operario:false}) 
+    this.state.analista === 'on' ? this.setState({operario:true}) : this.setState({operario:false}) 
+    this.state.administrador === 'on' ? this.setState({operario:true}) : this.setState({operario:false}) 
+    console.log(this.state.operario);
+    
+   
     fetch('http://localhost:5000/persona/', {
       method: 'POST',
-      body: JSON.stringify(this.state),
+      body: this.state,
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    }).then(res => console.log(res)).catch(err => console.error(err));
+    }).then(res => {
+      console.log(res)
+
+      
+    }).catch(err => console.error(err));
   }
   handleChange(e) {
     const { name, value} = e.target;
@@ -47,13 +59,13 @@ class FormUsuarios extends Component {
                   <div className="col-md-9">
                     <div className="form-group">
                       <label className="bmd-label-floating">Nombre</label>
-                      <input type="text" className="form-control" name="nombre"/>
+                      <input onChange={this.handleChange} type="text" className="form-control" name="nombre"/>
                     </div>
                   </div>
                   <div className="col-md-3">
                     <div className="form-group">
                       <label className="bmd-label-floating">Cedula</label>
-                      <input type="text" className="form-control" name="cedula"/>
+                      <input  onChange={this.handleChange}  type="text" className="form-control" name="cedula"/>
                     </div>
                   </div>
                 </div>
@@ -61,13 +73,13 @@ class FormUsuarios extends Component {
                   <div className="col-md-3">
                     <div className="form-group">
                       <label className="bmd-label-floating">Telefono</label>
-                      <input type="text" className="form-control" />
+                      <input name="telefono" onChange={this.handleChange} type="text" className="form-control" />
                     </div>
                   </div>
                   <div className="col-md-9">
                     <div className="form-group">
                       <label className="bmd-label-floating">Direccion</label>
-                      <input type="text" className="form-control" name="direccion"/>
+                      <input  onChange={this.handleChange}  type="text" className="form-control" name="direccion"/>
                     </div>
                   </div>
                 </div>
@@ -75,13 +87,13 @@ class FormUsuarios extends Component {
                   <div className="col-md-6">
                     <div className="form-group">
                       <label className="bmd-label-floating">Usuario</label>
-                      <input type="text" className="form-control" name="user"/>
+                      <input  onChange={this.handleChange}  type="text" className="form-control" name="user"/>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="form-group">
                       <label className="bmd-label-floating">Contraseña</label>
-                      <input type="text" className="form-control" name="password"/>
+                      <input  onChange={this.handleChange}  type="pasdword" className="form-control" name="password"/>
                     </div>
                   </div>
                 </div>
@@ -89,19 +101,19 @@ class FormUsuarios extends Component {
                 <div className="col-md-4">
                     <div className="form-group">
                       <label className="bmd-label-floating">Administrador</label>
-                      <input type="text" className="form-control" name="administrador"/>
+                      <input  onChange={this.handleChange}  type="radio" className="form-control" name="administrador"/>
                     </div>
                   </div>
                   <div className="col-md-4">
                     <div className="form-group">
                       <label className="bmd-label-floating">Analista</label>
-                      <input type="text" className="form-control" name="analista"/>
+                      <input  onChange={this.handleChange}  type="radio" className="form-control" name="analista"/>
                     </div>
                   </div>
                   <div className="col-md-4">
                     <div className="form-group">
                       <label className="bmd-label-floating">Operario</label>
-                      <input type="text" className="form-control" name="operario"/>
+                      <input  onChange={this.handleChange}  type="radio" className="form-control" name="operario"/>
                     </div>
                   </div>
                   

@@ -18,9 +18,11 @@ router.get('/:id', async (req, res) => {
 
 // ADD a new Persona
 router.post('/', async (req, res) => {
+  console.log(req.body);
+  
   const { nombre, telefono, cedula, direccion, user, password, administrador, analista, operario } = req.body;
   const persona = new Persona({nombre, telefono, cedula, direccion, user, password, administrador, analista, operario});
-  await persona.save().catch(err => res.status(400).json('Error: ' + err));
+  await persona.save().catch(err => console.log(err));
   res.json({status: 'Persona Saved'});
 });
 
