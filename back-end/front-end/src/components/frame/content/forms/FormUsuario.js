@@ -9,25 +9,22 @@ class FormUsuarios extends Component {
       direccion: '',
       user: '',
       password: '',
-      administrador: '',
-      analista: '',
-      operario: ''
+      administrador: false,
+      analista: false,
+      operario: false
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeBoolean=this.handleChangeBoolean.bind(this);
     this.addUsuario = this.addUsuario.bind(this);
   }
   addUsuario(e){
     e.preventDefault();
     console.log(this.state);
-    this.state.operario === 'on' ? this.setState({operario:true}) : this.setState({operario:false}) 
-    this.state.analista === 'on' ? this.setState({operario:true}) : this.setState({operario:false}) 
-    this.state.administrador === 'on' ? this.setState({operario:true}) : this.setState({operario:false}) 
-    console.log(this.state.operario);
-    
+    var newData = JSON.stringify(this.state);
    
     fetch('http://localhost:5000/persona/', {
       method: 'POST',
-      body: this.state,
+      body: newData,
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -43,6 +40,19 @@ class FormUsuarios extends Component {
     this.setState({
       [name]: value
     });
+  }
+  handleChangeBoolean(e) {
+    const { name, value} = e.target;
+    if (value === 'on'){
+      this.setState({
+        [name]: true
+      });
+    }else{
+      this.setState({
+        [name]: false
+      });
+    }
+    
   }
   render() {
     return (
@@ -93,7 +103,7 @@ class FormUsuarios extends Component {
                   <div className="col-md-6">
                     <div className="form-group">
                       <label className="bmd-label-floating">Contraseña</label>
-                      <input  onChange={this.handleChange}  type="pasdword" className="form-control" name="password"/>
+                      <input  onChange={this.handleChange}  type="password" className="form-control" name="password"/>
                     </div>
                   </div>
                 </div>
@@ -101,19 +111,19 @@ class FormUsuarios extends Component {
                 <div className="col-md-4">
                     <div className="form-group">
                       <label className="bmd-label-floating">Administrador</label>
-                      <input  onChange={this.handleChange}  type="radio" className="form-control" name="administrador"/>
+                      <input  onChange={this.handleChangeBoolean}  type="radio" className="form-control" name="administrador"/>
                     </div>
                   </div>
                   <div className="col-md-4">
                     <div className="form-group">
                       <label className="bmd-label-floating">Analista</label>
-                      <input  onChange={this.handleChange}  type="radio" className="form-control" name="analista"/>
+                      <input  onChange={this.handleChangeBoolean}  type="radio" className="form-control" name="analista"/>
                     </div>
                   </div>
                   <div className="col-md-4">
                     <div className="form-group">
                       <label className="bmd-label-floating">Operario</label>
-                      <input  onChange={this.handleChange}  type="radio" className="form-control" name="operario"/>
+                      <input  onChange={this.handleChangeBoolean}  type="radio" className="form-control" name="operario"/>
                     </div>
                   </div>
                   
