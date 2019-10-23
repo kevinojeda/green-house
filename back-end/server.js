@@ -23,16 +23,18 @@ connection.once('open', () => {
 })
 
 //const alarmaRouter = require('./routes/alarma');
-//const cosechaRouter = require('./routes/cosecha');
-//const especificacionesRouter = require('./routes/especificaciones');
+const cosechaRouter = require('./routes/cosecha');
+const especificacionesRouter = require('./routes/especificaciones');
 //const medicionRouter = require('./routes/medicion');
 const personaRouter = require('./routes/persona');
 
 //app.use('/alarma', alarmaRouter);
-//app.use('/cosecha', cosechaRouter);
-//app.use('/especificaciones', especificacionesRouter);
+app.use('/cosecha', cosechaRouter);
+app.use('/especificaciones', especificacionesRouter);
 //app.use('/medicion', medicionRouter );
 app.use('/persona', personaRouter);
+
+
 
 app.get('*', (req,res) =>{
 	res.sendFile(path.join(__dirname+'/front-end/public/index.html'));
