@@ -18,7 +18,6 @@ class FormUsuarios extends Component {
     this.addUsuario = this.addUsuario.bind(this);
   }
   addUsuario(e){
-    e.preventDefault();
     console.log(this.state);
     var newData = JSON.stringify(this.state);
    
@@ -31,9 +30,8 @@ class FormUsuarios extends Component {
       }
     }).then(res => {
       console.log(res)
-
-      
     }).catch(err => console.error(err));
+    this.push('/usuarios')
   }
   handleChange(e) {
     const { name, value} = e.target;
