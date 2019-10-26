@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Persona Model
-const Especificaciones = require('../models/especificaciones.models');
+const Especificaciones = require('../models/especificacion.models');
 
 // GET all Personas
 router.get('/', async (req, res) => {

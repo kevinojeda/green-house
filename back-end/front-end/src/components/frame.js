@@ -3,7 +3,6 @@ import SideBarMenu from './frame/sideBarMenu';
 import SearchBar from './frame/searchBar';
 import Indicators from './frame/indicator';
 import Graphs from './frame/graphs';
-import Tables from './frame/tables';
 import Footer from './frame/footer';
 
 
@@ -40,11 +39,13 @@ class Frame extends Component {
             <Route exact path="/especificaciones"  render={()=>{return(<div><TablaEspecificaciones/></div>)}}/>
             <Route exact path="/especificaciones/form"  render={()=>{return(<div><FormEspecificaciones/></div>)}}/>
 
-            <Route exact path="/cosechas"  render={()=>{return(<div><TablaCosecha/></div>)}}/>
-            <Route exact path="/cosechas/form"  render={()=>{return(<div><FormCosecha/></div>)}}/>
+            <Route exact path="/cosechas"  render={(props)=>{return(<div><TablaCosecha {...props}/></div>)}}/>
+            <Route exact path="/cosechas/form"  render={(props)=>{return(<div><FormCosecha {...props}/></div>)}}/>
+            <Route exact path="/cosechas/form/:id"  render={(props)=>{return(<div><FormCosecha {...props}/></div>)}}/>
 
-            <Route exact path="/usuarios"  render={()=>{return(<div><TablaUsuarios/></div>)}}/>
-            <Route exact path="/usuarios/form"  render={()=>{return(<div><FormUsuario/></div>)}}/>
+            <Route exact path="/usuarios"  render={(props)=>{return(<div><TablaUsuarios {...props}/></div>)}}/>
+            <Route exact path="/usuarios/form"  render={(props)=>{return(<div><FormUsuario {...props}/></div>)}}/>
+            <Route exact path="/usuarios/form/:id"  render={(props)=>{return(<div><FormUsuario {...props}/></div>)}}/>
 
             <Route exact path="/about_us"  render={()=>{return(<div></div>)}}/>
             </div>

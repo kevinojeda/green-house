@@ -22,16 +22,16 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
-//const alarmaRouter = require('./routes/alarma');
+const alarmaRouter = require('./routes/alarma');
 const cosechaRouter = require('./routes/cosecha');
-const especificacionesRouter = require('./routes/especificaciones');
-//const medicionRouter = require('./routes/medicion');
+const especificacionRouter = require('./routes/especificacion');
+const medicionRouter = require('./routes/medicion');
 const personaRouter = require('./routes/persona');
 
-//app.use('/alarma', alarmaRouter);
+app.use('/alarma', alarmaRouter);
 app.use('/cosecha', cosechaRouter);
-app.use('/especificaciones', especificacionesRouter);
-//app.use('/medicion', medicionRouter );
+app.use('/especificaciones', especificacionRouter);
+app.use('/medicion', medicionRouter );
 app.use('/persona', personaRouter);
 
 

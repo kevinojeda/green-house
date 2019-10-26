@@ -20,16 +20,16 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   console.log(req.body);
   
-  const { fecha_inicio, nombre_planta, numero_plantas, produccion_final, nivel_thc, nivel_cbd} = req.body;
-  const cosecha = new Cosecha({fecha_inicio, nombre_planta, numero_plantas, produccion_final, nivel_thc, nivel_cbd});
+  const { medicion} = req.body;
+  const cosecha = new Cosecha({medicion});
   await cosecha.save().catch(err => console.log(err));
   res.json({status: 'Cosecha Saved'});
 });
 
 // UPDATE a new Persona
 router.put('/:id', async (req, res) => {
-  const { fecha_inicio, nombre_planta, numero_plantas, produccion_final, nivel_thc, nivel_cbd } = req.body;
-  const newCosecha = {fecha_inicio, nombre_planta, numero_plantas, produccion_final, nivel_thc, nivel_cbd};
+  const { medicion } = req.body;
+  const newCosecha = {medicion};
   await Cosecha.findByIdAndUpdate(req.params.id, newCosecha).catch(err => res.status(400).json('Error: ' + err));
   res.json({status: 'Cosecha Updated'});
 });

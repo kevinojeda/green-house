@@ -6,7 +6,7 @@ const Cosecha = require('../models/cosecha.models');
 
 // GET all Personas
 router.get('/', async (req, res) => {
-  const cosecha = await Cocecha.find().catch(err => res.status(400).json('Error: ' + err));
+  const cosecha = await Cosecha.find().catch(err => res.status(400).json('Error: ' + err));
   res.json(cosecha);
 });
 
@@ -19,7 +19,6 @@ router.get('/:id', async (req, res) => {
 // ADD a new Persona
 router.post('/', async (req, res) => {
   console.log(req.body);
-  
   const { fecha_inicio, nombre_planta, numero_plantas, produccion_final, nivel_thc, nivel_cbd} = req.body;
   const cosecha = new Cosecha({fecha_inicio, nombre_planta, numero_plantas, produccion_final, nivel_thc, nivel_cbd});
   await cosecha.save().catch(err => console.log(err));
