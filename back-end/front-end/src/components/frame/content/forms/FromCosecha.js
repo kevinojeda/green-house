@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import DatePicker from 'react-datepicker';
-
-import 'react-datepicker/dist/react-datepicker.css'
 import axios from 'axios';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 class FormCosecha extends Component { 
   constructor(props) {
@@ -44,6 +44,8 @@ class FormCosecha extends Component {
     }
     }
   onSubmit = async (e) => {
+    
+    e.preventDefault();
     const newCosechaData = {
           fecha_inicio: this.state.fecha_inicio ,
           nombre_planta: this.state.nombre_planta ,

@@ -30,7 +30,7 @@ const personaRouter = require('./routes/persona');
 
 app.use('/alarma', alarmaRouter);
 app.use('/cosecha', cosechaRouter);
-app.use('/especificaciones', especificacionRouter);
+app.use('/especificacion', especificacionRouter);
 app.use('/medicion', medicionRouter );
 app.use('/persona', personaRouter);
 

@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const especificaciones = await Especificaciones.findById(req.params.id).catch(err => res.status(400).json('Error: ' + err));
   res.json(especificaciones);
+  console.log(res.body);
 });
 
 // ADD a new Persona

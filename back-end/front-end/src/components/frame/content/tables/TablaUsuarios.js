@@ -25,9 +25,8 @@ class TablaUsuarios extends Component {
     if (window.confirm("¿Esta seguro que desea eliminar este registro?")){
       await axios.delete('http://localhost:5000/persona/' + Id);
       this.getUsuarios();
-    }
-    
-}
+    }   
+  }
   render() {
     return (
       <div class="col-md-12">

@@ -48,6 +48,8 @@ class FormUsuarios extends Component {
     }
     }
   onSubmit = async (e) => {
+    
+    e.preventDefault();
     const newUserData = {
       nombre: this.state.nombre,
       telefono: this.state.telefono,

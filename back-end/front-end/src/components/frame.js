@@ -36,8 +36,9 @@ class Frame extends Component {
 
             <Route exact path="/alarmas"  render={()=>{return(<div><TablaAlarma/></div>)}}/>
 
-            <Route exact path="/especificaciones"  render={()=>{return(<div><TablaEspecificaciones/></div>)}}/>
-            <Route exact path="/especificaciones/form"  render={()=>{return(<div><FormEspecificaciones/></div>)}}/>
+            <Route exact path="/especificaciones"  render={(props)=>{return(<div><TablaEspecificaciones {...props}/></div>)}}/>
+            <Route exact path="/especificaciones/form"  render={(props)=>{return(<div><FormEspecificaciones  {...props}/></div>)}}/>
+            <Route exact path="/especificaciones/form/:id"  render={(props)=>{return(<div><FormEspecificaciones  {...props}/></div>)}}/>
 
             <Route exact path="/cosechas"  render={(props)=>{return(<div><TablaCosecha {...props}/></div>)}}/>
             <Route exact path="/cosechas/form"  render={(props)=>{return(<div><FormCosecha {...props}/></div>)}}/>
