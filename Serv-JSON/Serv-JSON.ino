@@ -13,6 +13,7 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
+IPAddress ip(192,168,0,17);
 EthernetServer server(80);
 
 void setup() {
@@ -24,11 +25,7 @@ void setup() {
   while (!Serial) continue;
 
   // Initialize Ethernet libary
-  if (!Ethernet.begin(mac)) {
-    Serial.println(F("Failed to initialize Ethernet library"));
-    return;
-  }
-
+  Ethernet.begin(mac , ip);
   // Start to listen
   server.begin();
 
@@ -59,25 +56,28 @@ void loop() {
   // Leemos la temperatura en grados centígrados (por defecto)
   float t = dht.readTemperature();
   // leemos la luz
+  
   float l = analogRead(1);
   // leemos co2
   float c = analogRead(0);
+
+  // Guardamos en el DOC
+
+  doc["humedad"] = h;
+  doc["temperatura"] = t;
+  if( l > 500 ){
+    doc["luz"] = false;
+  }else{
+    doc["luz"] = true;
+  }
+  doc["CO2"] = c;
  
   // Comprobamos si ha habido algún error en la lectura
-  if (isnan(h) || isnan(t) || isnan(f)) {
+  if (isnan(h) || isnan(t) ) {
     Serial.println("Error obteniendo los datos del sensor DHT11");
     return;
   } 
   
-
-  // Create the "analog" array---------------------------------------------------
-  JsonArray medicion = doc.createNestedArray("medicion");
- 
-    // Add the value at the end of the array
-  medicion.add(h);
-  medicion.add(t);
-  medicion.add(l);
-  medicion.add(c);
 
   Serial.print(F("Sending: "));
   serializeJson(doc, Serial);
