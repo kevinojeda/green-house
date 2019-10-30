@@ -9,7 +9,7 @@ const especificacionesSchema = new Schema({
   hum_dia: { type: Number, required: true, unique: false},
   hum_noche: { type: Number, required: true, unique: false},
   horas_luz: { type: Number , required: true, unique: false },
-  CO2: { type: Number , required: true, unique: false },
+  CO2: { type: Number , required: true, unique: false }
 }, 
 {
   timestamps: true,

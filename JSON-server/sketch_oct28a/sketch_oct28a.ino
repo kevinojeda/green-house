@@ -13,7 +13,7 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
-IPAddress ip(192,168,0,17);
+IPAddress ip(10,152,170,50);
 EthernetServer server(80);
 
 void setup() {
@@ -86,6 +86,9 @@ void loop() {
   // Write response headers
   client.println(F("HTTP/1.0 200 OK"));
   client.println(F("Content-Type: application/json"));
+  client.println(F("Access-Control-Allow-Origin: http://localhost:3000"));
+  client.println(F("Access-Control-Allow-Methods: POST, GET, OPTIONS"));
+  client.println(F("Access-Control-Allow-Headers: X-PINGOTHER, Content-Type"));
   client.println(F("Connection: close"));
   client.print(F("Content-Length: "));
   client.println(measureJsonPretty(doc));

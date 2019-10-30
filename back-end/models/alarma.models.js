@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const alarmaSchema = new Schema({
-  medicion: { type: String , required: true, unique: true }
+  temperatura:{ type: Number, required: true, unique: false },
+  humedad:{ type: Number, required: true, unique: false },
+  CO2:{ type: Number, required: true, unique: false },
+  luz: {type: Boolean, required: true, unique: false}
 }, 
 {
   timestamps: true,

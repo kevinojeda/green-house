@@ -16,6 +16,7 @@ import TablaCosecha from './frame/content/tables/TablaCosecha';
 import FormCosecha from './frame/content/forms/FromCosecha';
 import FormEspecificaciones from './frame/content/forms/FormEspecificaciones';
 import FormUsuario from './frame/content/forms/FormUsuario';
+import About from './frame/about';
 
  
 
@@ -48,7 +49,7 @@ class Frame extends Component {
             <Route exact path="/usuarios/form"  render={(props)=>{return(<div><FormUsuario {...props}/></div>)}}/>
             <Route exact path="/usuarios/form/:id"  render={(props)=>{return(<div><FormUsuario {...props}/></div>)}}/>
 
-            <Route exact path="/about_us"  render={()=>{return(<div></div>)}}/>
+            <Route exact path="/about_us"  render={()=>{return(<div><About/></div>)}}/>
             </div>
               
             </div>

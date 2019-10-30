@@ -1,5 +1,30 @@
 import React, { Component } from "react";
+import axios from 'axios';
 class TablaAlarma extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      alarmas: []
+    };
+    this.getAlarmas = this.getAlarmas.bind(this);
+    this.deleteAlarmas = this.deleteAlarmas.bind(this);
+  }
+  async componentDidMount() {
+    this.getAlarmas();
+  }
+  getAlarmas = async () => {
+    const res =  await axios.get('http://localhost:5000/alarma/')
+    .catch(function (error) {      console.log(error);  })
+    this.setState({ alarmas: res.data})
+
+    console.log(this.state);
+  }
+  deleteAlarmas  = async (Id) => {
+    if (window.confirm("¿Esta seguro que desea eliminar este registro?")){
+      await axios.delete('http://localhost:5000/alarma/' + Id);
+      this.getUsuarios();
+    }   
+  }
   render() {
     return (
       <div class="col-md-12">
@@ -16,15 +41,20 @@ class TablaAlarma extends Component {
                   <th>Humedad</th>
                   <th>CO2</th>
                   <th>Luz</th>
+                  <th>eliminar</th>
                 </thead>
                 <tbody>
+                {this.state.alarmas.map( alarma =>(
                   <tr>
-                    <td>3:30 </td>
-                    <td>25 °C</td>
-                    <td>30 %</td>
-                    <td>234 ppm</td>
-                    <td class="text-danger">No</td>
+                    <td class="text-info">{alarma.timestamps}</td>
+                    <td>{alarma.temperatura}</td>
+                    <td>{alarma.humedad}</td>
+                    <td>{alarma.CO2}</td>
+                    <td>{alarma.luz ? 'ON' : 'OFF'}</td>
+                    <td><button className="btn btn mr-2" onClick={() => this.deleteAlarmas(alarma._id)}>
+                      <i className="material-icons">delete</i> </button></td>
                   </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

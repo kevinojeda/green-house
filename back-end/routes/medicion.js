@@ -20,16 +20,16 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   console.log(req.body);
  
-  const { nombre, telefono, cedula, direccion, user, password, administrador, analista, operario } = req.body;
-  const medicion = new Medicion({nombre, telefono, cedula, direccion, user, password, administrador, analista, operario});
+  const { luz , temperatura , humedad , CO2 } = req.body;
+  const medicion = new Medicion({ luz , temperatura , humedad , CO2 });
   await medicion.save().catch(err => console.log(err));
   res.json({status: 'Medicion Saved'});
 });
 
 // UPDATE a new Medicion
 router.put('/:id', async (req, res) => {
-  const { nombre, telefono, cedula, direccion, user, password, administrador, analista, operario } = req.body;
-  const newMedicion = {nombre, telefono, cedula, direccion, user, password, administrador, analista, operario};
+  const { luz , temperatura , humedad , CO2 } = req.body;
+  const newMedicion = { luz , temperatura , humedad , CO2 };
   await Medicion.findByIdAndUpdate(req.params.id, newMedicion).catch(err => res.status(400).json('Error: ' + err));
   res.json({status: 'Medicion Updated'});
 });
